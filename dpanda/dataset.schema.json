@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "by": {
+      "type": "string",
+      "enum": [
+        "COLUMNSPEC",
+        "INTERNAL"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "enum": ["METADATA", "EVENT", "PREDICTION", "SHAP"]
+    },
+    "relatedDatasetName": {
+      "type": "string"
+    },
+    "freq": {
+      "type": "string",
+      "enum": ["D", "W", "M"],
+      "description": "데이터 발생 주기"
+    },
+    "partition": {
+      "type": "string",
+      "const": "M"
+    },
+    "grainColumns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "refDateColumn": {
+      "type": "string"
+    },
+    "columnSpecs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "column": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "DATE",
+              "TIMESTAMP",
+              "INT",
+              "STRING",
+              "FLOAT",
+              "NUMERIC",
+              "DOUBLE"
+            ]
+          },
+          "desc": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nullable": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "default": false
+          }
+        },
+        "required": [
+          "column",
+          "type"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "name",
+    "by",
+    "type"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

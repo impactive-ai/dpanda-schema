@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "groupId": {
+      "type": "string"
+    },
+    "groupName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "groupId",
+    "groupName"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "profileName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "window": {
+      "type": "number"
+    },
+    "template": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "profileName",
+    "description",
+    "window",
+    "template"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

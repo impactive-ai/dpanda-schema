@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Data Profile Schema",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "freq",
+    "grainColumns",
+    "valueColumn",
+    "dateColumn",
+    "table",
+    "refDate",
+    "followLatest"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the configuration"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable description"
+    },
+    "freq": {
+      "type": "string",
+      "enum": ["day", "week", "month"],
+      "description": "Frequency of the data (e.g., day/week/month)"
+    },
+    "grainColumns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "List of columns that define the granularity of the data"
+    },
+    "valueColumn": {
+      "type": "string",
+      "description": "Name of the column that holds the target value"
+    },
+    "dateColumn": {
+      "type": "string",
+      "description": "Name of the column containing date information"
+    },
+    "table": {
+      "type": "string",
+      "description": "Source table name"
+    },
+    "refDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Reference date in YYYY-MM-DD format"
+    },
+    "followLatest": {
+      "type": "boolean",
+      "description": "Flag indicating whether to follow the latest data"
+    }
+  },
+  "additionalProperties": false
+}
