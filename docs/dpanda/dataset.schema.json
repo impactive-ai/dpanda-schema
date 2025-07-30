@@ -21,8 +21,21 @@
       "type": "string",
       "enum": ["METADATA", "EVENT", "PREDICTION", "SHAP"]
     },
-    "relatedDatasetName": {
-      "type": "string"
+    "useDb": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "DB에 저장 여부",
+      "default": false
+    },
+    "tenantVisible": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "테넌트 노출 여부",
+      "default": false
     },
     "freq": {
       "type": "string",
@@ -31,7 +44,8 @@
     },
     "partition": {
       "type": "string",
-      "const": "M"
+      "enum": ["D", "W", "M"],
+      "description": "파티셔닝 주기"
     },
     "grainColumns": {
       "type": "array",
